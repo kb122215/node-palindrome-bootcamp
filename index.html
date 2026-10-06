@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Palindrome Checker</title>
+  </head>
+  <body>
+    <main>
+      <section class="checker">
+        <h1>Palindrome Checker</h1>
+
+        <p>Enter a word or phrase to see if it is a palindrome.</p>
+
+        <input
+          type="text"
+          id="word-input"
+          placeholder="Enter a word or phrase"
+        />
+
+        <button id="check-button">Check</button>
+
+        <section class="results">
+          <h2>Result</h2>
+          <p id="result-message"></p>
+
+          <p>
+            Reversed:
+            <span id="reversed-word">:</span>
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
