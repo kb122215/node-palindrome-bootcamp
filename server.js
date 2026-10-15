@@ -1,5 +1,7 @@
 const http = require("http");
 const fs = require("fs");
+const path = require("path");
+
 const server = http.createServer(function (req, res) {
   const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
 
@@ -10,7 +12,7 @@ const server = http.createServer(function (req, res) {
   console.log(page);
 
   if (page === "/") {
-    fs.readFile("index.html", function (err, data) {
+    fs.readFile(path.join(__dirname, "index.html"), function (err, data) {
       if (err) {
         console.log(err);
 
@@ -61,7 +63,7 @@ const server = http.createServer(function (req, res) {
       res.end(JSON.stringify(responseObject));
     }
   } else if (page === "/main.css") {
-    fs.readFile("main.css", function (err, data) {
+    fs.readFile(path.join(__dirname, "main.css"), function (err, data) {
       if (err) {
         res.writeHead(404);
         res.end();
@@ -69,12 +71,12 @@ const server = http.createServer(function (req, res) {
       }
 
       res.writeHead(200, {
-        "Contetn-Type": "text/css",
+        "Content-Type": "text/css",
       });
       res.end(data);
     });
   } else if (page === "/js/main.js") {
-    fs.readFile("js/main.js", function (err, data) {
+    fs.readFile(path.join(__dirname, "js/main.js"), function (err, data) {
       if (err) {
         res.writeHead(404);
         res.end();

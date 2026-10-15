@@ -1,0 +1,309 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: black;
+  color: white;
+}
+
+.app {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.checker {
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.controls {
+  margin-bottom: 35px;
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.input-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#word-input {
+  flex: 1;
+  min-width: 260px;
+  padding: 16px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+#check-button {
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #142d66;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+#reset-button {
+  padding: 16px 24px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #555;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+#check-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+#reset-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.cradle-wrapper {
+  margin: 30px 0 40px;
+  padding-top: 10px;
+}
+
+.cradle-bar {
+  width: 100%;
+  max-width: 900px;
+  height: 8px;
+  margin: 0 auto 5px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.pendulum-scene {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 280px;
+}
+.pendulum {
+  width: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+}
+
+.string {
+  width: 2px;
+  height: 120px;
+
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.ball {
+  width: 70px;
+  height: 70px;
+  margin-top: -2px;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(
+    circle at 30% 25%,
+    #6be1ff,
+    #18a6d8 55%,
+    #0b4670 100%
+  );
+
+  box-shadow:
+    inset -10px -14px 20px rgba(0, 0, 0, 0.25),
+    inset 8px 8px 18px rgba(255, 255, 255, 0.18),
+    0 14px 20px rgba(0, 0, 0, 0.2);
+
+  transition:
+    background 0.4s ease,
+    transform 0.3s ease;
+}
+
+.ball-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  text-transform: lowercase;
+}
+
+.ball.palindrome {
+  background: radial-gradient(
+    circle at 30% 25%,
+    #91ff9f,
+    #26ba58 55%,
+    #0d6c2c 100%
+  );
+}
+
+.ball.not-palindrome {
+  background: radial-gradient(
+    circle at 30% 25%,
+    #ffd5a6,
+    #f28c28 55%,
+    #b2560e 100%
+  );
+}
+
+.pendulum {
+  transform-origin: top center;
+}
+
+.pendulum-scene.swinging .left-ball {
+  animation: leftCradleSwing 1.2s ease-in-out 2;
+}
+
+.pendulum-scene.swinging .right-ball {
+  animation: rightCradleSwing 1.2s ease-in-out 2;
+}
+
+@keyframes leftCradleSwing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(35deg);
+  }
+
+  45% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rightCradleSwing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  45% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(-35deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.results {
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.results h2 {
+  margin-top: 0;
+}
+
+#result-message {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+#reversed-word {
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .pendulum-scene {
+    gap: 0;
+    flex-wrap: wrap;
+    min-height: auto;
+  }
+
+  .pendulum {
+    width: 110px;
+  }
+
+  .ball {
+    width: 96px;
+    height: 96px;
+  }
+
+  .string {
+    height: 110px;
+  }
+  .ball-text {
+    font-size: 0.74rem;
+    max-width: 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  .checker {
+    padding: 24px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  #check-button {
+    width: 100%;
+  }
+}

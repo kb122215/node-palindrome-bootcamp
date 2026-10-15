@@ -4,23 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
-    <title>Palindrome Checker</title>
+    <title>Palindrome Pendulum Checker</title>
   </head>
   <body>
-    <main>
+    <main class="app">
       <section class="checker">
-        <h1>Palindrome Checker</h1>
+        <header class="hero">
+          <h1>Palindrome Pendulum Checker</h1>
 
-        <p>Enter a word or phrase to see if it is a palindrome.</p>
+          <p>
+            Enter a word or phrase and watch the pendulum swing. If it is a
+            palindrome, the balls turn green.
+          </p>
+        </header>
+        <section class="controls">
+          <label for="word-input">Enter a word or phrase</label>
+          <div class="input-row">
+            <input
+              type="text"
+              id="word-input"
+              placeholder="Enter a word or phrase"
+            />
+            <button id="check-button">Check</button>
+            <button id="reset-button">Reset</button>
+          </div>
+        </section>
 
-        <input
-          type="text"
-          id="word-input"
-          placeholder="Enter a word or phrase"
-        />
-
-        <button id="check-button">Check</button>
-
+        <section class="cradle-wrapper">
+          <div class="cradle-bar"></div>
+          <div class="pendulum-scene" id="pendulum-scene"></div>
+        </section>
         <section class="results">
           <h2>Result</h2>
           <p id="result-message"></p>
