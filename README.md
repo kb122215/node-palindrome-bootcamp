@@ -1,7 +1,7 @@
-### Goal: 
-# Project: Server Side Palindrome Checker
 
 ### 📄 Description
+
+# Project: Server Side Palindrome Checker
 
 ### A simple server-side palindrome checker application that uses the fs and http modules to validate if a string is a palindrome.
 
