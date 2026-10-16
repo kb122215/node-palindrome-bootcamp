@@ -18,3 +18,6 @@ Feature C: Interactive & Responsive Design — Includes Check and Reset controls
 - CSS
 - JS
 - [Node JS]
+
+
+<img width="1345" height="934" alt="image" src="https://github.com/user-attachments/assets/c027afc6-1143-494d-a23e-2e5d505d1044" />
