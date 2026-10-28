@@ -1,10 +1,8 @@
-
-### 📄 Description
-
 # Project: Server Side Palindrome Checker
 
 ### A simple server-side palindrome checker application that uses the fs and http modules to validate if a string is a palindrome.
 
+### 🔗 [Open the live app on Render](https://node-palindrome-bootcamp-nc91.onrender.com/)
 
 ### ✨ Key Features
 
@@ -19,5 +17,10 @@ Feature C: Interactive & Responsive Design — Includes Check and Reset controls
 - JS
 - [Node JS]
 
-
 <img width="1345" height="934" alt="image" src="https://github.com/user-attachments/assets/c027afc6-1143-494d-a23e-2e5d505d1044" />
+
+## 👩🏽‍💻 Created By
+
+**Karimah**
+
+- GitHub: [@kb122215](https://github.com/kb122215)
